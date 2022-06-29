@@ -9,4 +9,6 @@ function getSpeciesByIds(...ids) {
   return species;
 }
 
+// console.log(getSpeciesByIds());
+
 module.exports = getSpeciesByIds;
