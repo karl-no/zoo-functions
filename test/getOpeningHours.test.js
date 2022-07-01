@@ -1,3 +1,4 @@
+const { hours } = require('../data/zoo_data');
 const getOpeningHours = require('../src/getOpeningHours');
 
 describe('Testes da função getOpeningHours', () => {
@@ -32,5 +33,13 @@ describe('Testes da função getOpeningHours', () => {
   // Para os argumentos Sunday e 13:00-AM deve lançar uma exceção com a mensagem: 'The hour must be between 0 and 12';
   it('', () => {
     expect(() => getOpeningHours('Sunday', '13:00-AM')).toThrow('The hour must be between 0 and 12');
+  });
+  // Para os argumentos Wednesday e 09:60-AM deve lançar uma exceção com a mensagem: 'TThe minutes must be between 0 and 59';
+  it('', () => {
+    expect(() => getOpeningHours('Wednesday', '09:60-AM')).toThrow('The minutes must be between 0 and 59');
+  });
+  // Para o argumento vazio deve retornar o objeto;
+  it('Para o argumento vazio deve retornar o objeto', () => {
+    expect(getOpeningHours()).toEqual(hours);
   });
 });
