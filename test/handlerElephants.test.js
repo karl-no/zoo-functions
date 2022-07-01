@@ -21,4 +21,12 @@ describe('Testes da função HandlerElephants', () => {
   it('Para argumento que não é uma string deve retornar: Parâmetro inválido, é necessário uma string', () => {
     expect(handlerElephants(1)).toBe('Parâmetro inválido, é necessário uma string');
   });
+  // Para o argumento vazio deve retornar 'null';
+  it('Para o argumento vazio deve retornar null', () => {
+    expect(handlerElephants('wrongParameter')).toBeNull();
+  });
+  // Para o argumento de uma String contida dentro do objeto elefantes deve retornar a respectiva chave
+  it('Para o argumento de uma String contida dentro do objeto elefantes deve retornar a respectiva chave', () => {
+    expect(handlerElephants('location')).toBe('NW');
+  });
 });
