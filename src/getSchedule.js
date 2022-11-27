@@ -53,6 +53,14 @@ function getSchedule(scheduleTarget) {
     return agenda(scheduleTarget);
   }
   return schedule();
+  // switch (true) {
+  // case species.some((animal) => animal.name === scheduleTarget):
+  //   return animalsAvailable(scheduleTarget);
+  // case Object.keys(hours).includes(scheduleTarget):
+  //   return agenda(scheduleTarget);
+  // default:
+  //   return schedule();
+  // }
 }
 
 console.log(getSchedule('Monday'));
